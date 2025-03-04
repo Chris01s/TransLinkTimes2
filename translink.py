@@ -26,7 +26,7 @@ def get_station_code(location):
 
 
 def curl_request_results():
-	results = os.popen("""curl 'https://www.translink.co.uk/JourneyPlannerApi/GetJourneyResults' -X POST -H 'User-Agent: Mozilla/5.0 (X11; Ubuntu; Linux x86_64; rv:132.0) Gecko/20100101 Firefox/132.0' -H 'Content-Type: application/json' --data-raw '{"OriginId":"10000038","DestinationId":"10000055","DepartureOrArrivalDate":"2024-11-11T23:55:00","isSearchByDepartureDate":true,"FindBusDepartures":false,"FindTrainDepartures":true,"HasStepFreeEnabled":false}' """).read()
+	results = os.popen("""curl 'https://www.translink.co.uk/JourneyPlannerApi/GetJourneyResults' -X POST -H 'User-Agent: Mozilla/5.0 (X11; Ubuntu; Linux x86_64; rv:132.0) Gecko/20100101 Firefox/132.0' -H 'Content-Type: application/json' --data-raw '{"OriginId":"10000038","DestinationId":"10000055","DepartureOrArrivalDate":"2024-11-11T23:55:00","isSearchByDepartureDate":false,"FindBusDepartures":false,"FindTrainDepartures":true,"HasStepFreeEnabled":false}' """).read()
 	return json.loads(results)
 
 
